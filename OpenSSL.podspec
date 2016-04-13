@@ -42,7 +42,7 @@ Pod::Spec.new do |s|
 
    s.subspec 'tv' do |ss|
     ss.ios.preserve_paths      = 'lib/libcrypto-tvOS.a', 'lib/libssl-tvOS.a'
-    sssios.vendored_libraries  = 'lib/libcrypto-tvOS.a', 'lib/libssl-tvOS.a'
+    ss.ios.vendored_libraries  = 'lib/libcrypto-tvOS.a', 'lib/libssl-tvOS.a'
    end
 
   s.libraries = 'ssl', 'crypto'
