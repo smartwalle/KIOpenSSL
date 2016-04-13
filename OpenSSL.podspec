@@ -5,7 +5,7 @@ Pod::Spec.new do |s|
   s.description  = "OpenSSL is an SSL/TLS and Crypto toolkit. Deprecated in Mac OS and gone in iOS, this spec gives your project non-deprecated OpenSSL support. Supports iOS including Simulator (armv7,armv7s,arm64,i386,x86_64)."
   s.homepage     = "https://github.com/smartwalle/OpenSSL-iOS"
   s.license	     = { :type => 'OpenSSL (OpenSSL/SSLeay)', :file => 'LICENSE.txt' }
-  s.source       = { :git => "https://github.com/smartwalle/OpenSSL-iOS.git", :tag => "#{s.version}", :submodules => false}
+  s.source       = { :git => "https://github.com/smartwalle/OpenSSL-iOS.git", :tag => "#{s.version}"}
 
   s.authors       =  {'Mark J. Cox' => 'mark@openssl.org',
                      'Ralf S. Engelschall' => 'rse@openssl.org',
@@ -40,10 +40,10 @@ Pod::Spec.new do |s|
 # s.osx.preserve_paths      = 'lib-osx/libcrypto.a', 'lib-osx/libssl.a'
 # s.osx.vendored_libraries  = 'lib-osx/libcrypto.a', 'lib-osx/libssl.a'
 
-   s.subspec 'tv' do |ss|
-    ss.ios.preserve_paths      = 'lib/libcrypto-tvOS.a', 'lib/libssl-tvOS.a'
-    ss.ios.vendored_libraries  = 'lib/libcrypto-tvOS.a', 'lib/libssl-tvOS.a'
-   end
+   s.tvos.deployment_target   = '9.0'
+   s.tvos.source_files        = 'include/openssl/**/*.h'
+   s.tvos.public_header_files = 'include/openssl/**/*.h'
+   s.tvos.header_dir          = 'openssl'
 
   s.libraries = 'ssl', 'crypto'
   s.requires_arc = false
