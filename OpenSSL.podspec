@@ -5,7 +5,7 @@ Pod::Spec.new do |s|
   s.description  = "OpenSSL is an SSL/TLS and Crypto toolkit. Deprecated in Mac OS and gone in iOS, this spec gives your project non-deprecated OpenSSL support. Supports iOS including Simulator (armv7,armv7s,arm64,i386,x86_64)."
   s.homepage     = "https://github.com/smartwalle/OpenSSL-iOS"
   s.license	     = { :type => 'OpenSSL (OpenSSL/SSLeay)', :file => 'LICENSE.txt' }
-  s.source       = { :git => "https://github.com/smartwalle/OpenSSL-iOS.git", :tag => "#{s.version}" }
+  s.source       = { :git => "https://github.com/smartwalle/OpenSSL-iOS.git", :tag => "#{s.version}", :submodules => true}
 
   s.authors       =  {'Mark J. Cox' => 'mark@openssl.org',
                      'Ralf S. Engelschall' => 'rse@openssl.org',
@@ -24,13 +24,13 @@ Pod::Spec.new do |s|
                      'Tim Hudson' => 'tjh@cryptsoft.com',
                      'Justin Plouffe' => 'plouffe.justin@gmail.com'}
   
-  s.ios.platform          = :ios, '6.0'
-  s.ios.deployment_target = '6.0'
+  s.ios.platform            = :ios, '6.0'
+  s.ios.deployment_target   = '6.0'
   s.ios.source_files        = 'include/openssl/**/*.h'
   s.ios.public_header_files = 'include/openssl/**/*.h'
   s.ios.header_dir          = 'openssl'
-  s.ios.preserve_paths      = 'lib/libcrypto.a', 'lib/libssl.a', 'lib/libcrypto-tvOS.a', 'lib/libssl-tvOS.a'
-  s.ios.vendored_libraries  = 'lib/libcrypto.a', 'lib/libssl.a', 'lib/libcrypto-tvOS.a', 'lib/libssl-tvOS.a'
+  s.ios.preserve_paths      = 'lib/libcrypto.a', 'lib/libssl.a'
+  s.ios.vendored_libraries  = 'lib/libcrypto.a', 'lib/libssl.a'
 
 # s.osx.platform          = :osx, '10.9'
 # s.osx.deployment_target = '10.8'
@@ -39,6 +39,11 @@ Pod::Spec.new do |s|
 # s.osx.header_dir          = 'openssl'
 # s.osx.preserve_paths      = 'lib-osx/libcrypto.a', 'lib-osx/libssl.a'
 # s.osx.vendored_libraries  = 'lib-osx/libcrypto.a', 'lib-osx/libssl.a'
+
+   s.subspec 'tv' do |ss|
+    ss.ios.preserve_paths      = 'lib/libcrypto-tvOS.a', 'lib/libssl-tvOS.a'
+    sssios.vendored_libraries  = 'lib/libcrypto-tvOS.a', 'lib/libssl-tvOS.a'
+   end
 
   s.libraries = 'ssl', 'crypto'
   s.requires_arc = false
