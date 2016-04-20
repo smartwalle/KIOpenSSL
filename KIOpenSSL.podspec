@@ -1,11 +1,11 @@
 Pod::Spec.new do |s|
-  s.name         = "OpenSSL-iOS"
+  s.name         = "KIOpenSSL"
   s.version      = "1.0.2#{("a".."z").to_a.index 'g'}"
   s.summary      = "OpenSSL for iOS"
   s.description  = "OpenSSL is an SSL/TLS and Crypto toolkit. Deprecated in Mac OS and gone in iOS, this spec gives your project non-deprecated OpenSSL support. Supports iOS including Simulator (armv7,armv7s,arm64,i386,x86_64)."
-  s.homepage     = "https://github.com/smartwalle/OpenSSL-iOS"
+  s.homepage     = "https://github.com/smartwalle/KIOpenSSL"
   s.license	     = { :type => 'OpenSSL (OpenSSL/SSLeay)', :file => 'LICENSE.txt' }
-  s.source       = { :git => "https://github.com/smartwalle/OpenSSL-iOS.git", :tag => "#{s.version}" }
+  s.source       = { :git => "https://github.com/smartwalle/KIOpenSSL.git", :tag => "#{s.version}" }
 
   s.authors       =  {'Mark J. Cox' => 'mark@openssl.org',
                      'Ralf S. Engelschall' => 'rse@openssl.org',
