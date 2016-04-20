@@ -24,13 +24,13 @@ Pod::Spec.new do |s|
                      'Tim Hudson' => 'tjh@cryptsoft.com',
                      'Justin Plouffe' => 'plouffe.justin@gmail.com'}
   
-  s.ios.platform          = :ios, '6.0'
-  s.ios.deployment_target = '6.0'
+  s.ios.platform            = :ios, '6.0'
+  s.ios.deployment_target   = '6.0'
   s.ios.source_files        = 'include/openssl/**/*.h'
   s.ios.public_header_files = 'include/openssl/**/*.h'
   s.ios.header_dir          = 'openssl'
-  s.ios.preserve_paths      = 'lib/libcrypto.a', 'lib/libssl.a', 'lib/libcrypto-tvOS.a', 'lib/libssl-tvOS.a'
-  s.ios.vendored_libraries  = 'lib/libcrypto.a', 'lib/libssl.a', 'lib/libcrypto-tvOS.a', 'lib/libssl-tvOS.a'
+  s.ios.preserve_paths      = 'lib/libcrypto.a', 'lib/libssl.a'
+  s.ios.vendored_libraries  = 'lib/libcrypto.a', 'lib/libssl.a'
 
 # s.osx.platform          = :osx, '10.9'
 # s.osx.deployment_target = '10.8'
@@ -39,6 +39,13 @@ Pod::Spec.new do |s|
 # s.osx.header_dir          = 'openssl'
 # s.osx.preserve_paths      = 'lib-osx/libcrypto.a', 'lib-osx/libssl.a'
 # s.osx.vendored_libraries  = 'lib-osx/libcrypto.a', 'lib-osx/libssl.a'
+
+   s.tvos.deployment_target   = '9.0'
+   s.tvos.source_files        = 'include/openssl/**/*.h'
+   s.tvos.public_header_files = 'include/openssl/**/*.h'
+   s.tvos.header_dir          = 'openssl'
+   s.tvos.preserve_paths      = 'lib/libcrypto.a', 'lib/libssl.a'
+   s.tvos.vendored_libraries  = 'lib/libcrypto-tvOS.a', 'lib/libssl-tvOS.a'
 
   s.libraries = 'ssl', 'crypto'
   s.requires_arc = false
