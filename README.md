@@ -5,7 +5,7 @@
 
 如果你想直接使用本项目提供的 OpenSSL 版本 （目前为 1.0.2g），只需要在您项目的 Podfile 文件里面添加以下内容即可：
 
-pod 'OpenSSL-iOS', :git => "https://github.com/smartwalle/OpenSSL-iOS.git"
+pod 'KIOpenSSL'
 
 
 如果你想选择特定的 OpenSSL 版本，只需要下载本项目，将 build-libssl.sh 文件中的 VERSION 变量设定为你需要的版本，然后执行 ./build-libssl.sh，该脚本会自动下载 OpenSSL 的源代码并进行编译。编译完成后，会在目录下生成 lib、bin 和 include 文件夹，lib 目录下为 iOS 各架构平台合并之后的静态库，各架构平台单独的静态库存放于 bin 目录下，include 为头文件。
