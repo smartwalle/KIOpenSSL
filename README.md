@@ -1,12 +1,13 @@
 # OpenSSL-for-iOS 
 
 ## 说明
-本项目是 [https://github.com/x2on/OpenSSL-for-iPhone](https://github.com/x2on/OpenSSL-for-iPhone) 的一个分支，原项目提供了很强大的编译 OpenSSL for iOS 的脚本，为了方便以后在 iOS 开发中使用 OpenSSL, 特此在原项目的基础上引入 Pod 进行管理。
+OpenSSL 编译脚本来源于：[https://github.com/x2on/OpenSSL-for-iPhone](https://github.com/x2on/OpenSSL-for-iPhone)，感谢原作者.
+
+原项目提供了很强大的编译 OpenSSL for iOS 的脚本，为了方便以后在 iOS 开发中使用 OpenSSL, 特此在原项目的基础上引入 Pod 进行管理。
 
 如果你想直接使用本项目提供的 OpenSSL 版本 （目前为 1.0.2g），只需要在您项目的 Podfile 文件里面添加以下内容即可：
 
 pod 'KIOpenSSL'
-
 
 如果你想选择特定的 OpenSSL 版本，只需要下载本项目，将 build-libssl.sh 文件中的 VERSION 变量设定为你需要的版本，然后执行 ./build-libssl.sh，该脚本会自动下载 OpenSSL 的源代码并进行编译。编译完成后，会在目录下生成 lib、bin 和 include 文件夹，lib 目录下为 iOS 各架构平台合并之后的静态库，各架构平台单独的静态库存放于 bin 目录下，include 为头文件。
 
